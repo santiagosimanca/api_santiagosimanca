@@ -1,0 +1,77 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #FFEB3B;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+}
+
+input[type="text"], button {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    padding: 10px;
+    margin: 10px;
+    border: 2px solid #333;
+    border-radius: 5px;
+    text-align: center;
+}
+
+button {
+    background-color: #333;
+    color: #FFEB3B;
+    cursor: pointer;
+}
+
+    button:hover {
+        background-color: #555;
+    }
+
+#results {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+    #results div {
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+        margin-bottom: 10px;
+        width: 100%;
+        max-width: 600px;
+        text-align: left;
+        display: flex;
+        align-items: center;
+    }
+
+    #results img {
+        max-width: 100px;
+        margin-right: 10px;
+    }
+
+#homeButton {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    padding: 10px;
+    margin: 10px;
+    border: 2px solid #333;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #333;
+    color: #FFEB3B;
+    cursor: pointer;
+}
+
+    #homeButton:hover {
+        background-color: #555;
+    }

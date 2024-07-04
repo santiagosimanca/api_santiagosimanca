@@ -1,0 +1,42 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div>
+    <input type="text" id="searchTerm" placeholder="Ingrese el producto que desea buscar">
+    <button onclick="searchProduct()">Buscar</button>
+</div>
+<div id="results"></div>
+<button id="homeButton" style="display:none;" onclick="goHome()">Home</button>
+
+@section Scripts {
+    <script>
+        function searchProduct() {
+            var term = document.getElementById("searchTerm").value;
+            fetch(`https://api.mercadolibre.com/sites/MLA/search?q=${term}`)
+                .then(response => response.json())
+                .then(data => {
+                    var results = document.getElementById("results");
+                    results.innerHTML = "";
+                    data.results.forEach(product => {
+                        results.innerHTML += `
+                                    <div>
+                                        <img src="${product.thumbnail}" alt="${product.title}">
+                                        <div>
+                                            <h3>${product.title}</h3>
+                                            <p>Precio: ${product.price}</p>
+                                        </div>
+                                    </div>
+                                `;
+                    });
+                    document.getElementById("homeButton").style.display = "block";
+                });
+        }
+
+        function goHome() {
+            document.getElementById("results").innerHTML = "";
+            document.getElementById("searchTerm").value = "";
+            document.getElementById("homeButton").style.display = "none";
+        }
+    </script>
+}
